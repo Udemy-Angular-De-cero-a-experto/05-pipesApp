@@ -1,2 +1,8 @@
 
-<p-menu [model]="menuItems" />
+<p-menubar [model]="menuItems">
+  <ng-template pTemplate="start">
+    <a href="/" title="Home">
+      <img src="./favicon.ico" alt="Icono">
+    </a>
+  </ng-template>
+</p-menubar>
