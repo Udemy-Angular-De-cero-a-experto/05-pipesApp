@@ -24,12 +24,12 @@ export class MenuComponent {
                 {
                   label: 'Número',
                   icon: 'pi pi-dollar',
-                  routerLink: '/numbers',
+                  routerLink: 'numbers',
                 },
                 {
                   label: 'No comunes',
                   icon: 'pi pi-globe',
-                  routerLink: '/uncommon',
+                  routerLink: 'uncommon',
                 },
               ],
             },
@@ -40,6 +40,7 @@ export class MenuComponent {
                 {
                   label: 'Otro elemento',
                   icon: 'pi pi-cog',
+                  routerLink: 'custom',
                 },
               ],
             },
