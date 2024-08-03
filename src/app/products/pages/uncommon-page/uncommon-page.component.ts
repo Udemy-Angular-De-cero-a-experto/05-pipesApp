@@ -33,7 +33,6 @@ export class UncommonPageComponent {
       default:
         this.name = 'Alfonso';
         this.gender = 'male';
-        break;
     }
   }
 

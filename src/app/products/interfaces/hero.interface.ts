@@ -1,5 +1,5 @@
 export enum Color {
-  red, black, blue, green
+  black, blue, green, red
 }
 
 export interface Hero {

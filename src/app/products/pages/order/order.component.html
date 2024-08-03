@@ -13,9 +13,17 @@
     />
   </div>
 
+  <div class="p-toolbar-group-center block">
+    <p-splitButton
+        label="Ordenar por..."
+        [model]="menuItems" />
+    <p-toast />
+  </div>
+
   <div class="p-toolbar-group-end">
 
     <p-button
+      (onClick)="changeOrder('name')"
       label="Por Nombre"
       icon="pi pi-sort"
       styleClass="p-button-success"
@@ -23,6 +31,7 @@
     />
 
     <p-button
+      (onClick)="changeOrder('canFly')"
       label="Por volar"
       icon="pi pi-sort"
       styleClass="p-button-danger"
@@ -30,6 +39,7 @@
     />
 
     <p-button
+      (onClick)="changeOrder('color')"
       label="Por color"
       icon="pi pi-sort"
       styleClass="p-button-help"
@@ -42,7 +52,7 @@
   <div class="col mt-2">
 
     <p-panel header="Héroes">
-      <p-table [value]="heroes" [tableStyle]="{ 'min-width': '50rem' }">
+      <p-table [value]="heroes | sortBy:orderBy" [tableStyle]="{ 'min-width': '50rem' }">
         <ng-template pTemplate="header">
             <tr>
                 <th>Nombre</th>
@@ -53,7 +63,7 @@
         <ng-template pTemplate="body" let-hero>
             <tr>
                 <td>{{ hero.name }}</td>
-                <td>{{ hero.canFly }}</td>
+                <td>{{ hero.canFly | canFly | titlecase }}</td>
                 <td>{{ hero.color }}</td>
             </tr>
         </ng-template>
